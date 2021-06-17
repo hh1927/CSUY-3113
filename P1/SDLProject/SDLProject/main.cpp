@@ -46,7 +46,7 @@ GLuint LoadTexture(const char* filePath) {
 
 void Initialize() {
     SDL_Init(SDL_INIT_VIDEO);
-    displayWindow = SDL_CreateWindow("P1", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 400, SDL_WINDOW_OPENGL);
+    displayWindow = SDL_CreateWindow("P1", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
     SDL_GL_MakeCurrent(displayWindow, context);
     
@@ -54,7 +54,7 @@ void Initialize() {
     glewInit();
 #endif
     
-    glViewport(0, 0, 500, 400);
+    glViewport(0, 0, 1280, 960);
     
     program.Load("shaders/vertex_textured.glsl", "shaders/fragment_textured.glsl");
     
